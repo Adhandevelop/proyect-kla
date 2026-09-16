@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monomeros Colombo Venezolanos S.A. | Innovación Agrícola</title>
+    <style>
+        :root {
+            --primary-color: #1b5e20;
+            --secondary-color: #2e7d32;
+            --accent-green: #4caf50;
+            --light-bg: #f4fcf4;
+            --card-bg: #ffffff;
+            --dark-color: #222222;
+            --gray-border: #d0d7d0;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--dark-color);
+            background-color: var(--light-bg);
+            line-height: 1.5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0d3b12 0%, #1b5e20 50%, #2e7d32 100%);
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .brand-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px 24px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            fill: #81c784;
+            animation: pulse-grow 3s infinite alternate;
+        }
+
+        @keyframes pulse-grow {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.08); }
+        }
+
+        .logo-text-group h1 {
+            font-size: 26px;
+            letter-spacing: 0.5px;
+            text-align: left;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .logo-text-group span {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #a5d6a7;
+            text-transform: uppercase;
+            display: block;
+            text-align: left;
+        }
+
+        header p.slogan {
+            font-size: 16px;
+            color: #c8e6c9;
+            font-style: italic;
+            max-width: 700px;
+            margin-top: 10px;
+        }
+
+        nav {
+            background-color: #113814;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            font-size: 13px;
+            transition: color 0.3s, border-bottom 0.3s;
+            padding-bottom: 3px;
+        }
+
+        nav a:hover {
+            color: #81c784;
+            border-bottom: 2px solid #81c784;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--secondary-color);
+            transition: transform 0.2s ease;
+        }
+
+        section:hover {
+            transform: translateY(-2px);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 22px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-size: 17px;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        p, li {
+            font-size: 14px;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .content-img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .img-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .img-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .card-inner {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e8e0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9fbf9;
+        }
+
+        tr:hover {
+            background-color: #f1f7f1;
+        }
+
+        .calculator-box {
+            background: var(--light-bg);
+            border: 1px solid #c8e6c9;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--gray-border);
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .calc-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .calc-btn:hover {
+            background-color: var(--primary-color);
+        }
+
+        .result-box {
+            margin-top: 20px;
+            background: white;
+            padding: 15px;
+            border-left: 4px solid var(--accent-green);
+            border-radius: 4px;
+            font-size: 14px;
+            display: none;
+        }
+
+        /* Estilo para la sección de referencias bibliográficas */
+        .references-box {
+            background: #fdfefe;
+            border: 1px dashed var(--secondary-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .references-box ol {
+            margin-left: 20px;
+        }
+
+        .references-box li {
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+
+        footer {
+            background-color: #111111;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .img-grid { grid-template-columns: 1fr; }
+            nav { display: flex; flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-container">
+            <div class="logo-box">
+                <svg class="logo-icon" viewBox="0 0 24 24">
+                    <path d="M17.81 4.47c-.08 0-.16-.02-.23-.06C15.66 3.42 13 3 10 3c-2.01 0-3.87.27-5.42.77-.52.17-.83.72-.66 1.24.17.51.72.82 1.23.65C5.82 5.3 7.82 5 10 5c2.62 0 5 .39 6.83 1.15.48.2 1.04-.04 1.24-.52.2-.48-.04-1.04-.52-1.24-.31-.13-.64-.24-.94-.34zM10 7c-4.42 0-8 3.58-8 8 0 2.45 1.12 4.64 2.88 6.11.41.35 1.02.3 1.37-.11.35-.41.3-1.02-.11-1.37C4.69 18.2 4 16.69 4 15c0-3.31 2.69-6 6-6 1.49 0 2.85.55 3.9 1.45.38.33.97.29 1.3-.09.33-.38.29-.97-.09-1.3C13.62 7.74 11.9 7 10 7zm10.71 8.71c-.39-.39-1.02-.39-1.41 0l-3.29 3.29-1.29-1.29c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41l2 2c.39.39 1.02.39 1.41 0l4-4c.39-.39.39-1.02 0-1.41z"/>
+                </svg>
+                <div class="logo-text-group">
+                    <span>Agroindustria Avanzada</span>
+                    <h1>MONÓMEROS</h1>
+                </div>
+            </div>
+            <p class="slogan">"Nutriendo la tierra, garantizando tu cosecha con innovación y sostenibilidad"</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#identidad">Identidad</a>
+        <a href="#oferta">Bioinsumos & Nanotecnología</a>
+        <a href="#financiamiento">Pago por Cosecha</a>
+        <a href="#politicas">Políticas</a>
+        <a href="#sistema">Simulador</a>
+        <a href="#referencias">Referencias</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Sección de Identidad -->
+        <section id="identidad">
+            <h2>🌱 1. Identidad Corporativa</h2>
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80" alt="Instalaciones industriales" class="content-img">
+            
+            <div class="grid-2">
+                <div class="card-inner">
+                    <h3>Misión</h3>
+                    <p>Proveemos soluciones nutricionales para el agro mediante la oferta combinada de fertilizantes de síntesis química e insumos biológicos avanzados, respaldados por asesoría técnica experta en campo y esquemas financieros flexibles, asegurando la productividad y rentabilidad sostenible de los agricultores.</p>
+                </div>
+                <div class="card-inner">
+                    <h3>Visión</h3>
+                    <p>Consolidarnos para el año 2030 como la empresa líder en la transición agroecológica regional, guiando a los productores hacia una agricultura de precisión que integre bioinsumos, nanotecnología y modelos de pago basados en el éxito de las cosechas.</p>
+                </div>
+            </div>
+
+            <h3>Objetivos Estratégicos</h3>
+            <ul>
+                <li><strong>Liderazgo Sostenible:</strong> Equilibrio dinámico entre la eficacia de la síntesis química y la biotecnología aplicada.</li>
+                <li><strong>Extensión Directa:</strong> Asesoría técnica en puntos de venta orientada a reducir la sobre-aplicación de insumos tradicionales.</li>
+                <li><strong>Alianza con el Productor:</strong> Modelos de cobro por garantía atados al rendimiento real de la cosecha.</li>
+            </ul>
+        </section>
+
+        <!-- Sección de Oferta -->
+        <section id="oferta">
+            <h2>🔬 2. Portafolio y Transición Tecnológica</h2>
+            <p>Optimizamos el rendimiento agrícola combinando la alta disponibilidad de los fertilizantes químicos tradicionales con alternativas biológicas y nanotecnológicas probadas para reducir drásticamente las dosis aplicadas sin perder efectividad biológica.</p>
+            
+            <div class="img-grid">
+                <img src="https://images.unsplash.com/photo-1628352081506-83c43123ed6d?auto=format&fit=crop&w=600&q=80" alt="Aplicación de insumos">
+                <img src="https://images.unsplash.com/photo-1592417817098-8f3d691a4bf5?auto=format&fit=crop&w=600&q=80" alt="Agricultura de precisión">
+            </div>
+
+            <table>
+                <tr>
+                    <th>Categoría de Insumo</th>
+                    <th>Descripción y Mecanismo de Acción</th>
+                    <th>Beneficio Clave</th>
+                </tr>
+                <tr>
+                    <td><strong>Fertilizantes Químicos</strong></td>
+                    <td>Nutrientes primarios de alta pureza y asimilación directa.</td>
+                    <td>Respuesta inmediata en fases críticas del cultivo.</td>
+                </tr>
+                <tr>
+                    <td><strong>Microorganismos Eficientes</strong></td>
+                    <td>Consorcios para solubilización de fósforo y fijación biológica de nitrógeno.</td>
+                    <td>Salud y regeneración de la microbiología edáfica.</td>
+                </tr>
+                <tr>
+                    <td><strong>Bioestimulantes Botánicos</strong></td>
+                    <td>Extractos naturales inductores de Resistencia Sistémica Inducida (ISR).</td>
+                    <td>Alta tolerancia al estrés biótico y abiótico.</td>
+                </tr>
+                <tr>
+                    <td><strong>Liberación Controlada</strong></td>
+                    <td>Gránulos inteligentes sincronizados con la tasa de absorción radicular.</td>
+                    <td>Minimización de pérdidas por lixiviación.</td>
+                </tr>
+                <tr>
+                    <td><strong>Nanotecnología Foliar</strong></td>
+                    <td>Formulaciones nanométricas para máxima penetración estomática.</td>
+                    <td>Reducción significativa del volumen de aplicación por hectárea.</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Sección de Financiamiento -->
+        <section id="financiamiento">
+            <h2>🤝 3. Servicio al Cliente: Garantía y Pago por Cosecha</h2>
+            <p>Respaldamos el desempeño de nuestros paquetes tecnológicos con un modelo comercial disruptivo que alinea nuestro éxito financiero con el rendimiento de su cultivo.</p>
+            <ul>
+                <li><strong>Garantía de Rendimiento en Puntos de Venta:</strong> Acompañamiento agronómico parametrizado desde el diagnóstico inicial hasta la recolección.</li>
+                <li><strong>Opción de Pago por Cosecha:</strong> Facilidad de diferir parte del valor de los insumos, cancelando directamente mediante un porcentaje acordado del volumen o valor de la cosecha comercializada.</li>
+                <li><strong>Mitigación de Riesgos Compartidos:</strong> Uso de herramientas digitales de monitoreo para ajustar las recomendaciones ante variables climáticas.</li>
+            </ul>
+        </section>
+
+        <!-- Sección de Políticas de Calidad -->
+        <section id="politicas">
+            <h2>🛡️ 4. Políticas de Calidad y Sostenibilidad</h2>
+            <p>En Monomeros Colombo Venezolanos S.A. nos comprometemos firmemente a:</p>
+            <ul>
+                <li>Cumplir rigurosamente con las normativas técnicas, de inocuidad y ambientales vigentes en la industria de insumos agrícolas.</li>
+                <li>Garantizar la trazabilidad y pureza garantizada de cada bioinsumo y fertilizante distribuido en nuestra red.</li>
+                <li>Promover la educación y capacitación técnica continua del agricultor para asegurar una transición productiva segura y rentable.</li>
+            </ul>
+        </section>
+
+        <!-- Simulador Interactivo -->
+        <section id="sistema">
+            <h2>💻 5. Simulador y Panel de Control de Transición</h2>
+            <p>Utilice esta herramienta interactiva para evaluar el porcentaje estimado de ahorro con bioinsumos o calcular el monto de pago atado al valor comercial de su cosecha:</p>
+            
+            <div class="calculator-box">
+                <div class="form-group">
+                    <label for="tipoSuelo">Condición del Suelo / Cultivo:</label>
+                    <select id="tipoSuelo">
+                        <option value="degradado">Suelo con desgaste químico previo (Ahorro estimado: 30%)</option>
+                        <option value="normal" selected>Suelo equilibrado / Transición estándar (Ahorro estimado: 45%)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="valorCosecha">Valor Estimado de la Cosecha Comercializada ($):</label>
+                    <input type="number" id="valorCosecha" value="15000000" placeholder="Ej. 15000000">
+                </div>
+
+                <div class="form-group">
+                    <label for="porcentajeAcuerdo">Porcentaje de Acuerdo por Cosecha (%):</label>
+                    <input type="number" id="porcentajeAcuerdo" value="15" placeholder="Ej. 15">
+                </div>
+
+                <button class="calc-btn" onclick="ejecutarSimulacion()">Calcular Proyección y Liquidación</button>
+
+                <div id="resultadoSimulacion" class="result-box"></div>
+            </div>
+        </section>
+
+        <!-- Sección de Referencias Bibliográficas integradas -->
+        <section id="referencias">
+            <h2>📚 6. Referencias Técnicas y Fuentes de Información</h2>
+            <p>Fundamentos teóricos, agronómicos y normativos que respaldan la formulación de este modelo tecnológico y de extensión:</p>
+            
+            <div class="references-box">
+                <ol>
+                    <li><strong>FAO (Organización de las Naciones Unidas para la Alimentación y la Agricultura).</strong> (2019–2023). <em>Agricultura de precisión y uso eficiente de bioinsumos en sistemas de producción intensiva</em>. Roma: FAO.</li>
+                    <li><strong>Monómeros Colombo Venezolanos S.A.</strong> (2025). <em>Reporte de sostenibilidad, portafolio de nutrición vegetal y directrices de asistencia técnica en puntos de venta</em>. Barranquilla, Colombia.</li>
+                    <li><strong>Díaz-Ruiz, J. & Martínez, L.</strong> (2022). <em>Impacto de la nanotecnología en fertilizantes foliares: reducción de dosis y optimización de la absorción estomática en cultivos de alto rendimiento</em>. Revista Colombiana de Ciencias Hortícolas, 16(2), 45-58.</li>
+                    <li><strong>Gómez-Alvarez, R.</strong> (2021). <em>Modelos financieros de agricultura por contrato y esquemas de pago atados al éxito de la cosecha para pequeños y medianos productores</em>. Editorial Agroeconomía Global, Bogotá.</li>
+                </ol>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Monomeros Colombo Venezolanos S.A. Todos los derechos reservados. | Agricultura Sostenible y de Precisión.</p>
+    </footer>
+
+    <script>
+        function ejecutarSimulacion() {
+            const tipoSuelo = document.getElementById('tipoSuelo').value;
+            const valorCosecha = parseFloat(document.getElementById('valorCosecha').value) || 0;
+            const porcentajeAcuerdo = parseFloat(document.getElementById('porcentajeAcuerdo').value) || 0;
+
+            let factorReduccion = tipoSuelo === "degradado" ? 0.30 : 0.45;
+            let ahorroQuimico = factorReduccion * 100;
+            let montoAPagar = valorCosecha * (porcentajeAcuerdo / 100);
+
+            const divResultado = document.getElementById('resultadoSimulacion');
+            divResultado.style.display = "block";
+            divResultado.innerHTML = `
+                <strong>📊 Resultados de la Simulación Agronómica y Financiera:</strong><br>
+                • <strong>Reducción de Insumos Químicos:</strong> ${ahorroQuimico}% de ahorro mediante la integración de nanotecnología y bioinsumos.<br>
+                • <strong>Monto de Liquidación por Cosecha:</strong> $${montoAPagar.toLocaleString()} (Calculado sobre el ${porcentajeAcuerdo}% del valor comercializado).<br>
+                <em>Nota: Operación procesada exitosamente bajo el esquema de garantía compartida de Monómeros.</em>
+            `;
+        }
+    </script>
+
+</body>
+</html>
